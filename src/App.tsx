@@ -8,7 +8,6 @@ export const App: FC =()=> (
     <Routes>
       <Route element={<MainLayout/>}>
         <Route path="/" element={<Home/>} />
-
       </Route>
     </Routes>
 )

@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mui/styled-engine": "pnpm:@mui/styled-engine-sc@latest",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/icons-material": "^5.15.13",
     "@mui/material": "^5.15.13",
+    "@mui/styled-engine": "pnpm:@mui/styled-engine-sc@latest",
     "material": "link:@mui\\material",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -23,6 +25,7 @@
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
   },
   "devDependencies": {
+    "@types/node": "^20.11.28",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.1.1",

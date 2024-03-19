@@ -1,30 +1,26 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Box, Container, Stack } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import { Navbar } from './navbar/navbar';
+import { Footer } from '../footer/footer';
 
 export const MainLayout: FC = () => {
   return (
-    <Box minHeight={'100vh'} position={'relative'}>
-      <Navbar />
-      <Stack
-        flexDirection="column"
-        spacing={0}
-        sx={{
-          pl: '280px',
-          pt: '64px',
-        }}
-      >
-        <Container
-          maxWidth="xl"
+    <>
+    <Navbar />
+      <Box minHeight={'100vh'} position={'relative'} sx={{ padding: 0, margin: 0}}>
+        <Stack
+          flexDirection="column"
+          spacing={0}
           sx={{
-            pt: '1rem',
+            padding: 0,
+            margin: 0,
           }}
-        >
-            Hello!
-          <Outlet />
-        </Container>
-      </Stack>
-    </Box>
+        >  
+            <Outlet />
+        </Stack>
+      </Box>
+    <Footer/>
+    </>
   );
 };

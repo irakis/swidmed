@@ -1,15 +1,55 @@
 import {FC} from 'react';
-import { Box } from '@mui/material';
-
+import { useState } from 'react';
+import { Container, List, ListItem, ListItemButton, Collapse, ListItemText, Box, Paper } from '@mui/material';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import zIndex from '@mui/material/styles/zIndex';
 
 export const Navbar: FC =()=> {
+    const [open, setOpen] = useState(false);
+
+    const handleClick = () => {
+      setOpen(!open);
+    };
     return(
-        <Box 
+        <Container
             sx={{
-                bgcolor: 'red',
-                height: 350
-            }}>
-            Navbar
-        </Box>
+                bgcolor: 'white',
+                height: 150,
+                width: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',                
+            }}
+        >
+            <Box>
+                <img width='180px' src='/images/swidmed-logo.svg' alt='logo'/>
+            </Box>
+            <Box>
+            <List component="nav" sx={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-center'}}>
+                <ListItem>
+                    <ListItemButton onClick={handleClick}>
+                            <ListItemText>Poradnie</ListItemText>
+                            {open ? <ExpandLess /> : <ExpandMore />}
+                    </ListItemButton>
+               </ListItem>
+               <Collapse in={open} timeout="auto" unmountOnExit  >    
+                    <List component="div" disablePadding sx={{alignContent: 'flex-start', position: 'relative', top: 100}}>
+                        <Paper elevation={3} sx={{position: 'relative', zIndex: 2}}>
+                                <ListItem>Poradnia endoskopii</ListItem>
+                                <ListItem>Poradnia gastroenterologiczna</ListItem>
+                                <ListItem>Poradnia leczenia uzależnień</ListItem>
+                                <ListItem>Poradnia seksuplogiczna</ListItem>
+                                <ListItem>Poradnia psychologiczna dla dzieci</ListItem>
+                                <ListItem>Poradnia zdrowia psychicznego</ListItem>
+                        </Paper>
+                    </List>
+                </Collapse>
+               <ListItem>Pracownia endoskopii</ListItem>
+               <ListItem>Pliki do pobrania</ListItem>
+               <ListItem>Rejestracja</ListItem>
+            </List>
+            </Box>
+        </Container>
     )
 }
