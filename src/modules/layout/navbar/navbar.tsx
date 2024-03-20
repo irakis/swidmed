@@ -1,9 +1,9 @@
-import {FC} from 'react';
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Container, List, ListItem, ListItemButton, Collapse, ListItemText, Box, Paper } from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import zIndex from '@mui/material/styles/zIndex';
 
 export const Navbar: FC =()=> {
     const [open, setOpen] = useState(false);
@@ -36,7 +36,7 @@ export const Navbar: FC =()=> {
                <Collapse in={open} timeout="auto" unmountOnExit  >    
                     <List component="div" disablePadding sx={{alignContent: 'flex-start', position: 'relative', top: 100}}>
                         <Paper elevation={3} sx={{position: 'relative', zIndex: 2}}>
-                                <ListItem>Poradnia endoskopii</ListItem>
+                                <ListItem><a href='/endoscope_clinic'>Poradnia endoskopii</a></ListItem>
                                 <ListItem>Poradnia gastroenterologiczna</ListItem>
                                 <ListItem>Poradnia leczenia uzależnień</ListItem>
                                 <ListItem>Poradnia seksuplogiczna</ListItem>
@@ -47,7 +47,7 @@ export const Navbar: FC =()=> {
                 </Collapse>
                <ListItem>Pracownia endoskopii</ListItem>
                <ListItem>Pliki do pobrania</ListItem>
-               <ListItem>Rejestracja</ListItem>
+               <ListItem><Link to='form'>Rejestracja</Link></ListItem>
             </List>
             </Box>
         </Container>
