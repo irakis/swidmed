@@ -1,11 +1,11 @@
 import { FormGroup, Stack, TextField, Box, FormControl, InputLabel, Select, MenuItem, Button } from '@mui/material';
-import {FC, useState} from 'react';
-
+import {FC, useState, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export const Form: FC =()=> {
 
     const [formData, setFormData] =useState({clinic: '', foreName: '', sureName: '', birthDay: '', zipCode:'', city: '', street: '', phone: '', email: '', visit: '', message: '' })
-    
+    const captchaRef = useRef<ReCAPTCHA>(null);
     console.log('form data 1?:',formData);
 
     const handleChange =(e: any)=> {
@@ -15,6 +15,12 @@ export const Form: FC =()=> {
     const handleSubmit =(e:any)=>{
         e.preventDefault();
         console.log('formData2:', formData);
+        const token = captchaRef.current?.getValue();
+        captchaRef.current?.reset();
+        if (token !== '') {
+            console.log('verification positive')
+        }
+
     }
 
 
@@ -63,7 +69,16 @@ export const Form: FC =()=> {
                         <TextField required placeholder="Wpisz wiadomość" helperText="Opisz cel wizyty" sx={{width: '100%'}} multiline rows={10} onChange={(e)=>setFormData({...formData, message: e.target.value})}/>
                     </Box>
                 </FormGroup>
+                <Box sx={{marginTop: 3, justifyContent: 'center', display: 'flex'}}>
+                    <ReCAPTCHA
+                        sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
+                        ref={captchaRef}
+                    />
+                </Box>
                 <Button variant="outlined" color="secondary" type="submit" sx={{margin: 2}}>Wyślij</Button>
+                <Box  sx={{ overflow:'hidden', height: 400 }}>
+                <img height='auto' width='100%' src='/images/team.jpg' alt='team'/>
+            </Box>
             </form>
         </Stack>
     )

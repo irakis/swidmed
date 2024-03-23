@@ -1,10 +1,10 @@
 import {FC} from 'react';
 import { Box } from '@mui/material';
 import { Clinic } from '../clinic/clinic';
-import { data } from './endoscope-data';
+import { data } from './addiction-data';
 
 
-export const Endoscope: FC =()=> {
+export const Addiction: FC =()=> {
     return(
         <Box
             sx={{

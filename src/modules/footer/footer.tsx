@@ -1,4 +1,4 @@
-import { Container, Box, Stack } from '@mui/material';
+import { Container, Box, Stack, Link } from '@mui/material';
 import { FC } from 'react';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
@@ -7,18 +7,21 @@ import PhoneAndroidOutlinedIcon from '@mui/icons-material/PhoneAndroidOutlined';
 
 export const Footer: FC =()=> {
     return(
-        <Container maxWidth={false} disableGutters={true} sx={{bgcolor: '#4C8BBE', margin: 0,padding: 0}}>
+        <Container maxWidth={false} sx={{bgcolor: '#4C8BBE', margin: 0, padding: 0}}>
             <Container sx={{
-                padding: 3,
                 width: '100%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',                
             }}>
                 <Box sx={{display: 'flex', alignItems: 'center', color: 'white'}}>
-                    <FmdGoodOutlinedIcon sx={{fontSize: 40, margin: 3}}></FmdGoodOutlinedIcon>
+                    <Link href='/contact' sx={{color: 'white', display: 'flex'}}>
+                        <FmdGoodOutlinedIcon sx={{fontSize: 40, margin: 3}}></FmdGoodOutlinedIcon>
+                    </Link>
                     <p>ul.Władysława Kunickiego 46<br></br>
-                        20-412 Lublin</p>
+                        20-412 Lublin
+                    </p>
+                   
                 </Box>
                 <Box sx={{display: 'flex', alignItems: 'center', color: 'white'}}>
                     <AlternateEmailOutlinedIcon sx={{fontSize: 40, margin: 3}}></AlternateEmailOutlinedIcon>
@@ -26,7 +29,7 @@ export const Footer: FC =()=> {
                 </Box>
                 <Box sx={{display: 'flex', alignItems: 'center', color: 'white'}}>
                     <PhoneAndroidOutlinedIcon sx={{fontSize: 40, margin: 3}}></PhoneAndroidOutlinedIcon>
-                    <p>+ 48 500 867 636</p>
+                    <p>+ 48 720 886 670</p>
                 </Box>
 
             </Container>
