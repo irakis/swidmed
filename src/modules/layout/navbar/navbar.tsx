@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Link from '@mui/material/Link';
-import { ListItemAvatar, Avatar} from '@mui/material';
+import { AppBar, ListItemAvatar } from '@mui/material';
 import { useState } from 'react';
 import { Container, List, ListItem, ListItemButton, Collapse, ListItemText, Box, Paper } from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
@@ -14,15 +14,14 @@ export const Navbar: FC =()=> {
       setOpen(!open);
     };
     return(
-        <>
+        <AppBar position='fixed' color='inherit'>
             <Box sx={{
                 bgcolor: 'white',
-                height: 20,
                 width: '100%',
                 display: 'flex',
                 justifyContent:'end'                
             }}>
-                <List sx={{ display: 'flex', flexDirection:'row', alignItems: 'center'}}>
+                <List sx={{ display: 'flex', flexDirection:'row', alignItems: 'center', padding: 0}}>
                     <ListItem>
                         <ListItemAvatar>
                             <Link href='#'>
@@ -47,11 +46,11 @@ export const Navbar: FC =()=> {
         <Container
             sx={{
                 bgcolor: 'white',
-                height: 150,
                 width: '100%',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between',                
+                justifyContent: 'space-around',
+                padding: 0          
             }}
         >
             <Box>
@@ -61,11 +60,11 @@ export const Navbar: FC =()=> {
             </Box>
             <Box>
             <List component="nav" sx={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-center'}}>
-            <ListItem>
-                <Link color='#000000' underline='none' href='/'>
-                    <ListItemButton>Start</ListItemButton>
-                </Link>
-            </ListItem>
+                <ListItem>
+                    <Link color='#000000' underline='none' href='/'>
+                        <ListItemButton>Start</ListItemButton>
+                    </Link>
+                </ListItem>
                 <ListItem>
                     <ListItemButton onClick={handleClick}>
                             <ListItemText>Poradnie</ListItemText>
@@ -73,7 +72,7 @@ export const Navbar: FC =()=> {
                     </ListItemButton>
                </ListItem>
                <Collapse in={open} timeout="auto" unmountOnExit  >    
-                    <List component="div" disablePadding sx={{alignContent: 'flex-start', position: 'relative', top: 100}}>
+                    <List component="div" disablePadding sx={{alignContent: 'flex-start'}}>
                         <Paper elevation={3} sx={{position: 'relative', zIndex: 2}}>
                                 <ListItem><Link color='#000000' underline='none' href='/endoscope_clinic'>Poradnia endoskopii</Link></ListItem>
                                 <ListItem><Link color='#000000' underline='none' href='/gastro_clinic'>Poradnia gastroenterologiczna</Link></ListItem>
@@ -107,6 +106,6 @@ export const Navbar: FC =()=> {
             </List>
             </Box>
         </Container>
-    </>
+    </AppBar>
     )
 }

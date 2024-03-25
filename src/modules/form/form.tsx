@@ -1,12 +1,16 @@
-import { FormGroup, Stack, TextField, Box, FormControl, InputLabel, Select, MenuItem, Button } from '@mui/material';
+import { FormGroup, Stack, TextField, Box, FormControl, InputLabel, Select, MenuItem, Button, Alert } from '@mui/material';
 import {FC, useState, useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useNavigate } from "react-router-dom";
+import emailjs from '@emailjs/browser';
 
 export const Form: FC =()=> {
+    const navigate = useNavigate();
+    const [alertState, setAlertState] = useState('none')
+    const [alertStateWarning, setAlertStateWarning] = useState('none')
 
     const [formData, setFormData] =useState({clinic: '', foreName: '', sureName: '', birthDay: '', zipCode:'', city: '', street: '', phone: '', email: '', visit: '', message: '' })
     const captchaRef = useRef<ReCAPTCHA>(null);
-    console.log('form data 1?:',formData);
 
     const handleChange =(e: any)=> {
         setFormData({...formData, clinic: e.target.value});
@@ -14,15 +18,28 @@ export const Form: FC =()=> {
   
     const handleSubmit =(e:any)=>{
         e.preventDefault();
-        console.log('formData2:', formData);
         const token = captchaRef.current?.getValue();
+        console.log('formData?:', formData)
+
         captchaRef.current?.reset();
         if (token !== '') {
-            console.log('verification positive')
+            const template_id = `${import.meta.env.VITE_APP_TEMPALTE_ID}`;
+            const service_id = `${import.meta.env.VITE_APP_SERVICE_ID}`;
+                const user_id = `${import.meta.env.VITE_APP_USER_ID}`;
+                
+                emailjs.send(service_id, template_id , formData, user_id)
+                .then((result) => {
+                    console.log(result.text);
+                    setAlertState('block')
+                }, (error) => {
+                    console.log(error.text);
+                    setAlertStateWarning('block')
+                });
+        } else {
+            setAlertStateWarning('block')
         }
 
     }
-
 
     return(
         <Stack>
@@ -74,6 +91,30 @@ export const Form: FC =()=> {
                         sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
                         ref={captchaRef}
                     />
+                </Box>
+                <Box sx={{margin: 2, display: `${alertState}`}}>
+                    <Alert
+                        severity='success'
+                        action={
+                            <Button color="inherit" size="small" onClick={()=>navigate('/')}>
+                                Dalej
+                            </Button>
+                        }
+                        >
+                        Formularz został wysłany!
+                    </Alert>
+                </Box>
+                <Box sx={{margin: 2, display: `${alertStateWarning}`}}>
+                    <Alert
+                        severity='warning'
+                        action={
+                            <Button color="inherit" size="small" onClick={()=>navigate('/')}>
+                                Dalej
+                            </Button>
+                        }
+                        >
+                        Formularz nie został wysłany! Prosimy o telefon
+                    </Alert>
                 </Box>
                 <Button variant="outlined" color="secondary" type="submit" sx={{margin: 2}}>Wyślij</Button>
                 <Box  sx={{ overflow:'hidden', height: 400 }}>

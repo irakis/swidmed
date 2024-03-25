@@ -19,6 +19,7 @@ export const Clinic: FC<Props> =(data)=> {
                 width: '100%',
                 margin: 0,
                 padding:0,
+                marginBottom: 12
             }}
         >
             <Box sx={{ overflow:'hidden', height: 400 }}>

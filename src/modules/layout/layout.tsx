@@ -8,7 +8,7 @@ export const MainLayout: FC = () => {
   return (
     <Container maxWidth={false} disableGutters sx={{padding: 0, margin: 0}}>
       <Navbar />
-        <Box minHeight={'100vh'} position={'relative'} sx={{ padding: 0, margin: 0}}>
+        <Box minHeight={'100vh'}  sx={{ padding: 0, marginTop: 18}}>
           <Stack
             flexDirection="column"
             spacing={0}

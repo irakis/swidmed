@@ -11,6 +11,7 @@ export const Home: FC =()=> {
                 width: '100%',
                 margin: 0,
                 padding:0,
+                marginBottom: 12
             }}
         >
             <Box sx={{ overflow:'hidden', height: 400 }}>
