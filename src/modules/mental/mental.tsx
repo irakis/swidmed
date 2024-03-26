@@ -1,5 +1,5 @@
-import {FC} from 'react';
-import { Box } from '@mui/material';
+import React, {FC} from 'react';
+import Box from '@mui/material/Box';
 import { Clinic } from '../clinic/clinic';
 import { data } from './mental-data';
 
