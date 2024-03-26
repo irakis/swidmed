@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import { AppBar, ListItemAvatar } from '@mui/material';
 import { useState } from 'react';
 import { Container, List, ListItem, ListItemButton, Collapse, ListItemText, Box, Paper } from '@mui/material';
@@ -24,14 +24,14 @@ export const Navbar: FC =()=> {
                 <List sx={{ display: 'flex', flexDirection:'row', alignItems: 'center', padding: 0}}>
                     <ListItem>
                         <ListItemAvatar>
-                            <Link href='#'>
+                            <Link to='#'>
                                 <FacebookRoundedIcon sx={{ fontSize: 39 }} color='primary'/>
                             </Link>
                         </ListItemAvatar>
                     </ListItem>
                     <ListItem>
                         <ListItemAvatar>
-                            <Link href='#'>
+                            <Link to='#'>
                                 <img height={31} src='/logo/POL_BIP_icon.svg.png'/>
                             </Link>
                         </ListItemAvatar>
@@ -54,14 +54,14 @@ export const Navbar: FC =()=> {
             }}
         >
             <Box>
-                <Link color='#000000' underline='none' href='/'>
+                <Link color='#000000' to='/'>
                     <img width='180px' src='/images/swidmed-logo.svg' alt='logo'/>
                 </Link>
             </Box>
             <Box>
             <List component="nav" sx={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-center'}}>
                 <ListItem>
-                    <Link color='#000000' underline='none' href='/'>
+                    <Link color='black' to='/'>
                         <ListItemButton>Start</ListItemButton>
                     </Link>
                 </ListItem>
@@ -74,32 +74,32 @@ export const Navbar: FC =()=> {
                <Collapse in={open} timeout="auto" unmountOnExit  >    
                     <List component="div" disablePadding sx={{alignContent: 'flex-start'}}>
                         <Paper elevation={3} sx={{position: 'relative', zIndex: 2}}>
-                                <ListItem><Link color='#000000' underline='none' href='/endoscope_clinic'>Poradnia endoskopii</Link></ListItem>
-                                <ListItem><Link color='#000000' underline='none' href='/gastro_clinic'>Poradnia gastroenterologiczna</Link></ListItem>
-                                <ListItem><Link color='#000000' underline='none'href='/addiction_clinic'>Poradnia leczenia uzależnień</Link></ListItem>
-                                <ListItem><Link color='#000000' underline='none' href='/sexual_clinic'>Poradnia seksuologiczna</Link></ListItem>
-                                <ListItem><Link color='#000000' underline='none' href='/children_clinic'>Poradnia psychologiczna dla dzieci</Link></ListItem>
-                                <ListItem><Link color='#000000' underline='none' href='/mental_clinic'>Poradnia zdrowia psychicznego</Link></ListItem>
+                                <ListItem><Link color='#000000' to='/endoscope_clinic'>Poradnia endoskopii</Link></ListItem>
+                                <ListItem><Link color='#000000' to='/gastro_clinic'>Poradnia gastroenterologiczna</Link></ListItem>
+                                <ListItem><Link color='#000000' to='/addiction_clinic'>Poradnia leczenia uzależnień</Link></ListItem>
+                                <ListItem><Link color='#000000' to='/sexual_clinic'>Poradnia seksuologiczna</Link></ListItem>
+                                <ListItem><Link color='#000000' to='/children_clinic'>Poradnia psychologiczna dla dzieci</Link></ListItem>
+                                <ListItem><Link color='#000000' to='/mental_clinic'>Poradnia zdrowia psychicznego</Link></ListItem>
                         </Paper>
                     </List>
                 </Collapse>
                <ListItem>
-                    <Link color='#000000' underline='none' href='/endo_workshop_clinic'>
+                    <Link color='#000000' to='/endo_workshop_clinic'>
                         <ListItemButton> Pracownia endoskopii</ListItemButton>
                     </Link>
                 </ListItem>
                <ListItem>
-                    <Link color='#000000' underline='none' href='/documents'>
+                    <Link color='#000000' to='/documents'>
                         <ListItemButton>Pliki do pobrania</ListItemButton>
                     </Link>
                 </ListItem>
                <ListItem>
-                    <Link color='#000000' underline='none' href='/form'>
+                    <Link color='#000000' to='/form'>
                         <ListItemButton onClick={()=>setOpen(false)}>Rejestracja</ListItemButton>
                     </Link>
                 </ListItem>
                 <ListItem>
-                    <Link color='#000000' underline='none' href='/contact'>
+                    <Link color='#000000' to='/contact'>
                         <ListItemButton onClick={()=>setOpen(false)}>Kontakt</ListItemButton>
                     </Link>
                 </ListItem>

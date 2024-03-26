@@ -1,4 +1,5 @@
-import { Container, Box, Stack, Link } from '@mui/material';
+import { Container, Box, Stack } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { FC } from 'react';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
@@ -10,8 +11,8 @@ export const Footer: FC =()=> {
              <Stack  sx={{display: 'block', alignItems: 'center', color: 'white', width: '100vw', bgcolor: '#4C8BBE', position: 'fixed', left: 0, bottom: 0}}>
                 <Container sx={{justifyContent: 'center', alignContent: 'center', display: 'flex', gap: 2}}>
                     <Box sx={{display: 'flex', alignItems: 'center', color: 'white'}}>
-                        <Link href='/contact' sx={{color: 'white', display: 'flex'}}>
-                            <FmdGoodOutlinedIcon sx={{fontSize: 32, margin: 1}}></FmdGoodOutlinedIcon>
+                        <Link to='/contact'>
+                            <FmdGoodOutlinedIcon sx={{fontSize: 32, margin: 1, color: 'white'}}></FmdGoodOutlinedIcon>
                         </Link>
                         <p>ul.Władysława Kunickiego 46<br></br>
                             20-412 Lublin
