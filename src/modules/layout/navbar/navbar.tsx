@@ -74,12 +74,12 @@ export const Navbar: FC =()=> {
                <Collapse in={open} timeout="auto" unmountOnExit  >    
                     <List component="div" disablePadding sx={{alignContent: 'flex-start'}}>
                         <Paper elevation={3} sx={{position: 'relative', zIndex: 2}}>
-                                <ListItem><Link color='#000000' to='/endoscope_clinic'>Poradnia endoskopii</Link></ListItem>
-                                <ListItem><Link color='#000000' to='/gastro_clinic'>Poradnia gastroenterologiczna</Link></ListItem>
-                                <ListItem><Link color='#000000' to='/addiction_clinic'>Poradnia leczenia uzależnień</Link></ListItem>
-                                <ListItem><Link color='#000000' to='/sexual_clinic'>Poradnia seksuologiczna</Link></ListItem>
-                                <ListItem><Link color='#000000' to='/children_clinic'>Poradnia psychologiczna dla dzieci</Link></ListItem>
-                                <ListItem><Link color='#000000' to='/mental_clinic'>Poradnia zdrowia psychicznego</Link></ListItem>
+                                <ListItem><Link onClick={handleClick} to='/endoscope_clinic'>Poradnia endoskopii</Link></ListItem>
+                                <ListItem><Link onClick={handleClick} to='/gastro_clinic'>Poradnia gastroenterologiczna</Link></ListItem>
+                                <ListItem><Link onClick={handleClick} to='/addiction_clinic'>Poradnia leczenia uzależnień</Link></ListItem>
+                                <ListItem><Link onClick={handleClick} to='/sexual_clinic'>Poradnia seksuologiczna</Link></ListItem>
+                                <ListItem><Link onClick={handleClick} to='/children_clinic'>Poradnia psychologiczna dla dzieci</Link></ListItem>
+                                <ListItem><Link onClick={handleClick} to='/mental_clinic'>Poradnia zdrowia psychicznego</Link></ListItem>
                         </Paper>
                     </List>
                 </Collapse>

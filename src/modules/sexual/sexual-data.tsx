@@ -1,4 +1,5 @@
 export const data = {
+    title: 'Poradnia seksuologiczna',
     alt: 'sexual_clinic',
     text0: '',
     items0: [],

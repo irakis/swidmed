@@ -14,6 +14,7 @@ export const Addiction: FC =()=> {
             }}
         >
             <Clinic
+                title={data.title}
                 alt={data.alt}
                 text={data.text}
                 url={data.url}

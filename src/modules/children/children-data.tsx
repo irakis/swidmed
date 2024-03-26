@@ -1,4 +1,5 @@
 export const data = {
+    title: 'Poradnia psychologiczna dla dzieci',
     alt: 'children_clinic',
     text0: '',
     items0: [],

@@ -1,4 +1,5 @@
 export const data = {
+    title: 'Poradnia zdrowia psychicznego',
     alt: 'mental_clinic',
     text0: '',
     items0: [],

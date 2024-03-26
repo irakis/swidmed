@@ -1,4 +1,5 @@
 export const data = {
+    title: 'Poradnia leczenia uzależnień',
     alt: 'addiction_clinic',
     text0: '',
     items0: [],

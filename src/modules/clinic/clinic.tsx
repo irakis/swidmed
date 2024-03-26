@@ -4,6 +4,7 @@ import MedicalServicesOutlinedIcon from '@mui/icons-material/MedicalServicesOutl
 import Parser from 'html-react-parser';
 
 interface Props {
+    title: string,
     alt: string;
     text: string;
     text0: string;
@@ -26,7 +27,7 @@ export const Clinic: FC<Props> =(data)=> {
                 <img height='auto' width='100%' src={data.url} alt={data.alt}/>
             </Box>
             <Box sx={{justifyItems: 'center'}}>
-                <h1>ŚWIDMED Centrum Usług Medycznych</h1>
+                <h1>{data.title}</h1>
                 <h3>Jesteśmy nowoczesną placówką oferującą usługi z zakresu ochrony zdrowia w ramach sześciu różnych poradni</h3>
                 <p>{Parser(data.text)}</p>
                 {data.items ? 

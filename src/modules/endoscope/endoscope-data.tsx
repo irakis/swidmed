@@ -1,4 +1,5 @@
 export const data = {
+    title: 'Poradnia endoskopii',
     alt: 'endoscope_clinic',
     text0: '',
     items0: [],
