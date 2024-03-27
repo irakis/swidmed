@@ -15,7 +15,7 @@ export const Home: FC =()=> {
             }}
         >
             <Box sx={{ overflow:'hidden', height: 400 }}>
-                <img height='auto' width='100%' src='/images/patient.jpg' alt='clinic_1'/>
+                <img height='auto' width='100%' src='/images/patient.avif' alt='clinic_1'/>
             </Box>
             <Box>
                 <h1>ŚWIDMED Centrum Usług Medycznych</h1>

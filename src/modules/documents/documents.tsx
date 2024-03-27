@@ -1,4 +1,5 @@
 import {FC} from 'react';
+import { Link } from 'react-router-dom';
 import { Box } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -27,9 +28,11 @@ export const Documents: FC =()=> {
                                 <FolderIcon />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText
-                            primary="Ankieta anestezjologiczna"
-                        />
+                        <Link to='/documents/Ankieta Anestezjologiczna.pdf' target='blank' style={{ color: 'black' }}>
+                            <ListItemText
+                                primary="Ankieta anestezjologiczna"
+                            />
+                        </Link>
                     </ListItem>
                     <ListItem>
                         <ListItemAvatar>
@@ -37,9 +40,11 @@ export const Documents: FC =()=> {
                                 <FolderIcon />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText
-                            primary="Zasady korzystania z psychoterapii"
-                        />
+                        <Link to='/documents/Zasady korzystania z psychoterapii.pdf' target='blank' style={{ color: 'black' }}>
+                            <ListItemText
+                                primary="Zasady korzystania z psychoterapii"
+                            />
+                        </Link>
                     </ListItem>
                     <ListItem>
                         <ListItemAvatar>
@@ -47,9 +52,11 @@ export const Documents: FC =()=> {
                                 <FolderIcon />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText
-                            primary="Oświadczenie pacjenta lub przedstawiciela ustawowego"
-                        />
+                        <Link to='/documents/Oświadczenie pacjenta-przedstawiciela.pdf' target='blank' style={{ color: 'black' }}>
+                            <ListItemText
+                                primary="Oświadczenie pacjenta lub przedstawiciela ustawowego"
+                            />
+                        </Link>
                     </ListItem>
                     <ListItem>
                         <ListItemAvatar>
@@ -57,9 +64,11 @@ export const Documents: FC =()=> {
                                 <FolderIcon />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText
-                            primary="Polityka prywatności"
-                        />
+                        <Link to='/documents/Polityka Prywatności.pdf' target='blank' style={{ color: 'black' }}>
+                            <ListItemText
+                                primary="Polityka prywatności"
+                            />
+                        </Link>
                     </ListItem>
                     <ListItem>
                         <ListItemAvatar>
@@ -67,26 +76,16 @@ export const Documents: FC =()=> {
                                 <FolderIcon />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText
-                            primary="Przygotowanie do zabiegu"
-                        />
-                    </ListItem>
-                    <ListItem>
-                        <ListItemAvatar>
-                            <Avatar>
-                                <FolderIcon />
-                            </Avatar>
-                        </ListItemAvatar>
-                        <ListItemText
-                            primary="Single-line item"
-                        />
-                    </ListItem>
-                
+                        <Link to='/documents/Wniosek-o-dokumentacje-medyczna.pdf' target='blank' style={{ color: 'black' }}>
+                            <ListItemText
+                                primary="Wniosek o dokumentację medyczną"
+                            />
+                        </Link>
+                    </ListItem>                
                 </List>
             </Box>
-       
-            <Box  sx={{ overflow:'hidden', height: 400 }}>
-                <img height='auto' width='100%' src='/images/team.jpg' alt='team'/>
+            <Box  sx={{ overflow:'hidden', height: 400, marginBottom: 11 }}>
+                <img height='auto' width='100%' src='/images/team.avif' alt='team'/>
             </Box>
         </Box>
     )
