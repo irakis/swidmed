@@ -22,7 +22,7 @@ export const EndoWorkshop: FC =()=> {
                 text0={data.text0}
                 items0={data.items0}
             />
-            <Box  sx={{ overflow:'hidden', height: 400, marginBottom: 11 }}>
+            <Box  sx={{ overflow:'hidden', marginBottom: 11, '@media(max-width: 576px)':{marginBottom: 0} }}>
                 <img height='auto' width='100%' src='/images/team.avif' alt='team'/>
             </Box>
         </Box>

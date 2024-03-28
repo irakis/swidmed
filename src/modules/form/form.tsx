@@ -67,17 +67,17 @@ export const Form: FC =()=> {
                             </Select>
                         </FormControl>
                     </Box>
-                    <Box sx={{display: 'flex', justifyContent: 'space-between', marginTop: 2}}>
+                    <Box sx={{display: 'flex', justifyContent: 'space-between', marginTop: 2, '@media(max-width: 576px)': {display: 'block'}}}>
                         <TextField required label='Imię' type='text' sx={{width: 250}} helperText='Imię' onChange={(e)=>setFormData({...formData, foreName: e.target.value})}/>
                         <TextField required label='Nazwisko' sx={{width: 400}} helperText='Nazwisko' onChange={(e)=>setFormData({...formData, sureName: e.target.value})}/>
                         <TextField required type='date' helperText='Data urodzenia' onChange={(e)=>setFormData({...formData, birthDay: e.target.value})}/>
                     </Box>
-                    <Box sx={{display: 'flex', justifyContent: 'space-between', marginTop: 2}}>
+                    <Box sx={{display: 'flex', justifyContent: 'space-between', marginTop: 2, '@media(max-width: 576px)': {display: 'block'}}}>
                         <TextField required label='Kod pocztowy' helperText='Kod pocztowy' onChange={(e)=>setFormData({...formData, zipCode: e.target.value})}/>
                         <TextField required label='Miasto' helperText='Miasto' onChange={(e)=>setFormData({...formData, city: e.target.value})}/>
                         <TextField required label='Ulica nr domu/nr mieszkania' helperText='Ulica nr domu/nr mieszkania' sx={{width: 400}} onChange={(e)=>setFormData({...formData, street: e.target.value})}/>
                     </Box>
-                    <Box sx={{display: 'flex', justifyContent: 'space-between', marginTop: 2}}>
+                    <Box sx={{display: 'flex', justifyContent: 'space-between', marginTop: 2, '@media(max-width: 576px)': {display: 'block'}}}>
                         <TextField required label='telefon' helperText='telefon' sx={{width: 325}} onChange={(e)=>setFormData({...formData, phone: e.target.value})}/>
                         <TextField required label='email' helperText='email' sx={{width: 325}} onChange={(e)=>setFormData({...formData, email: e.target.value})}/>
                         <TextField required helperText='Preferowany termin wizyty' type='date' onChange={(e)=>setFormData({...formData, visit: e.target.value})}/>
@@ -117,8 +117,8 @@ export const Form: FC =()=> {
                     </Alert>
                 </Box>
                 <Button variant="outlined" color="secondary" type="submit" sx={{margin: 2}}>Wyślij</Button>
-                <Box  sx={{ overflow:'hidden', height: 400, marginBottom: 11 }}>
-                <img height='auto' width='100%' src='/images/team.avif' alt='team'/>
+                <Box  sx={{ overflow:'hidden', height: 400, marginBottom: 11, '@media(max-width: 576px)': {marginBottom: 0, height: 'auto', '& .root': {padding: 0}} }}>
+                    <img height='auto' width='100%' src='/images/team.avif' alt='team'/>
             </Box>
             </form>
         </Stack>

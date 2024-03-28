@@ -11,10 +11,11 @@ export const Home: FC =()=> {
                 width: '100%',
                 margin: 0,
                 padding:0,
-                marginBottom: 12
+                marginBottom: 12,
+                '@media(max-width: 576px)': { marginBottom: 0 }
             }}
         >
-            <Box sx={{ overflow:'hidden', height: 400 }}>
+            <Box sx={{ overflow:'hidden', height: 400, objectFit: 'cover', '@media(max-width: 576px)': { height: 'auto' } }}>
                 <img height='auto' width='100%' src='/images/patient.avif' alt='clinic_1'/>
             </Box>
             <Box>

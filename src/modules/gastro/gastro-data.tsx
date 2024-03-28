@@ -1,5 +1,5 @@
 export const data = {
-    title: 'Poradnia agstroenterologiczna',
+    title: 'Poradnia gastroenterologiczna',
     alt: 'gastro_clinic',
     text0: '',
     items0: [],

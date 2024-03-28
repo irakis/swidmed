@@ -20,10 +20,11 @@ export const Clinic: FC<Props> =(data)=> {
                 width: '100%',
                 margin: 0,
                 padding:0,
-                marginBottom: 12
+                marginBottom: 12,
+                '@media(max-width: 576px)': {marginBottom: 0}
             }}
         >
-            <Box sx={{ overflow:'hidden', height: 400 }}>
+            <Box sx={{ overflow:'hidden', height: 400, '@media(max-width: 576px)':{height: 'auto'} }}>
                 <img height='auto' width='100%' src={data.url} alt={data.alt}/>
             </Box>
             <Box sx={{justifyItems: 'center'}}>

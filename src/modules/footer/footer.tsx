@@ -56,9 +56,10 @@ export const Footer: FC =()=> {
       }
     `
     return(
-             <Stack  sx={{display: 'block', alignItems: 'center', color: 'white', width: '100vw', bgcolor: '#4C8BBE', position: 'fixed', left: 0, bottom: 0, boxShadow: 3}}>
-                <Container sx={{justifyContent: 'center', alignContent: 'center', display: 'flex', gap: 2}}>
-                    <Box sx={{display: 'flex', alignItems: 'center', color: 'white'}}>
+            <Stack  sx={{display: 'block', alignItems: 'center', color: 'white', width: '100vw', bgcolor: '#4C8BBE',
+              position: 'fixed', left: 0, bottom: 0, '@media(max-width: 576px)': {position: 'static', fontSize: '90%', width: '100%'}}}>
+                <Container sx={{justifyContent: 'center', alignContent: 'center', display: 'flex', gap: 2,  '@media(max-width: 576px)': {display: 'block'}}}>
+                    <Box sx={{display: 'flex', alignItems: 'center', color: 'white', justifyContent: 'space-evenly'}}>
                         <Link to='/contact'>
                             <FmdGoodOutlinedIcon sx={{fontSize: 32, margin: 1, color: 'white', animation:  `${blink} 2s linear infinite`}}></FmdGoodOutlinedIcon>
                         </Link>
@@ -67,16 +68,16 @@ export const Footer: FC =()=> {
                         </p>
                     
                     </Box>
-                    <Box sx={{display: 'flex', alignItems: 'center', color: 'white'}}>
+                    <Box sx={{display: 'flex', alignItems: 'center', color: 'white', justifyContent: 'space-evenly'}}>
                         <AlternateEmailOutlinedIcon sx={{fontSize: 32, margin: 1}}></AlternateEmailOutlinedIcon>
                         <p>swidmedsp@gmail.com</p>
                     </Box>
-                    <Box sx={{display: 'flex', alignItems: 'center', color: 'white'}}>
+                    <Box sx={{display: 'flex', alignItems: 'center', color: 'white', justifyContent: 'space-evenly'}}>
                         <PhoneAndroidOutlinedIcon sx={{fontSize: 32, margin: 1, animation: `${shake} 2s linear infinite`}}></PhoneAndroidOutlinedIcon>
                         <p>+ 48 720 886 670</p>
                     </Box>
                 </Container>
-                <Container sx={{display: 'flex', justifyContent: 'center', fontSize: 12, gap: 2}}>
+                <Container id='footerNip' sx={{display: 'flex', justifyContent: 'center', fontSize: 12, gap: 2,  '@media(max-width: 576px)': {display: 'block'}}}>
                     <p>NIP 71234252278 / REGON 520149350</p>
                     <p>NUMER KSIĘGI REJESTROWEJ 000000270773</p>
                     <p>designed: auxiliumpro44@gmail.com</p>
