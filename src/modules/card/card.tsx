@@ -1,10 +1,15 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import CardActionArea from '@mui/material/CardActionArea';
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import CardActionArea from "@mui/material/CardActionArea";
 
-export default function ActionAreaCard(data: {url: string, alt: string, title: string, text: string}) {
+export default function ActionAreaCard(data: {
+  url: string;
+  alt: string;
+  title: string;
+  text: string;
+}) {
   return (
     <Card sx={{ maxWidth: 345, height: 400 }}>
       <CardActionArea>
