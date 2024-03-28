@@ -117,7 +117,7 @@ export const Form: FC =()=> {
                     </Alert>
                 </Box>
                 <Button variant="outlined" color="secondary" type="submit" sx={{margin: 2}}>Wyślij</Button>
-                <Box  sx={{ overflow:'hidden', height: 400, marginBottom: 11, '@media(max-width: 576px)': {marginBottom: 0, height: 'auto', '& .root': {padding: 0}} }}>
+                <Box  sx={{ overflow:'hidden', height: 400, marginBottom: 11, '@media(max-width: 576px)': {marginBottom: 0, height: 'auto'} }}>
                     <img height='auto' width='100%' src='/images/team.avif' alt='team'/>
             </Box>
             </form>

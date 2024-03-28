@@ -84,8 +84,8 @@ export const Documents: FC =()=> {
                     </ListItem>                
                 </List>
             </Box>
-            <Box  sx={{ overflow:'hidden', marginBottom: 11, '@media(max-width: 576px)': {marginBottom: 0} }}>
-                <img width='100%' src='/images/team.avif' alt='team'/>
+            <Box sx={{ marginBottom: 10, '@media(max-width: 576px)': {marginBottom: 0, height: 'auto'} }}>
+                <img height='auto' width='100%' src='/images/team.avif' alt='team'/>
             </Box>
         </Box>
     )
