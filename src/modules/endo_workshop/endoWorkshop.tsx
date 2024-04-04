@@ -18,6 +18,7 @@ export const EndoWorkshop: FC = () => {
         text={data.text}
         url={data.url}
         items={data.items}
+        text1={data.text1}
         text0={data.text0}
         items0={data.items0}
       />

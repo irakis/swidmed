@@ -10,64 +10,29 @@ import {
   Collapse,
   ListItemText,
   Box,
-  Paper,
 } from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
+import { NavbarSocialMedia } from "./components/navbarSocial.Media";
+import { ColapsedMenuPaper } from "./components/colapsedMenuPaper";
 
 export const Navbar: FC = () => {
   const [open, setOpen] = useState(false);
 
-  const handleClick = () => {
+  const handleClick: any = () => {
     setOpen(!open);
   };
+
   return (
     <AppBar
       sx={{
         position: "fixed",
-        "@media (max-width: 576px)": { position: "static" },
+        "@media (max-width: 576px)": { position: "static", display: "none" },
       }}
       color="inherit"
     >
-      <Box
-        sx={{
-          bgcolor: "white",
-          width: "100%",
-          display: "flex",
-          justifyContent: "end",
-          "@media (max-width: 576px)": { display: "block" },
-        }}
-      >
-        <List
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 0,
-          }}
-        >
-          <ListItem>
-            <ListItemAvatar>
-              <Link to="#">
-                <FacebookRoundedIcon sx={{ fontSize: 39 }} color="primary" />
-              </Link>
-            </ListItemAvatar>
-          </ListItem>
-          <ListItem>
-            <ListItemAvatar>
-              <Link to="#">
-                <img height={31} src="/logo/POL_BIP_icon.svg.png" />
-              </Link>
-            </ListItemAvatar>
-          </ListItem>
-          <ListItem>
-            <ListItemAvatar>
-              <img height={31} src="/logo/nfz_logo_A_kolor-min.jpg" />
-            </ListItemAvatar>
-          </ListItem>
-        </List>
-      </Box>
+      <NavbarSocialMedia />
       <Container
         sx={{
           bgcolor: "white",
@@ -80,7 +45,7 @@ export const Navbar: FC = () => {
         }}
       >
         <Box>
-          <Link color="#000000" to="/">
+          <Link to="/">
             <img width="180px" src="/images/swidmed-logo.svg" alt="logo" />
           </Link>
         </Box>
@@ -96,7 +61,9 @@ export const Navbar: FC = () => {
           >
             <ListItem>
               <Link color="black" to="/">
-                <ListItemButton>Start</ListItemButton>
+                <ListItemButton onClick={() => setOpen(false)}>
+                  Start
+                </ListItemButton>
               </Link>
             </ListItem>
             <ListItem>
@@ -114,59 +81,47 @@ export const Navbar: FC = () => {
                 disablePadding
                 sx={{ alignContent: "flex-start" }}
               >
-                <Paper elevation={3} sx={{ position: "relative", zIndex: 2 }}>
-                  <ListItem>
-                    <Link onClick={handleClick} to="/endoscope_clinic">
-                      Poradnia endoskopii
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link onClick={handleClick} to="/gastro_clinic">
-                      Poradnia gastroenterologiczna
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link onClick={handleClick} to="/addiction_clinic">
-                      Poradnia leczenia uzależnień
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link onClick={handleClick} to="/sexual_clinic">
-                      Poradnia seksuologiczna
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link onClick={handleClick} to="/children_clinic">
-                      Poradnia psychologiczna dla dzieci
-                    </Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link onClick={handleClick} to="/mental_clinic">
-                      Poradnia zdrowia psychicznego
-                    </Link>
-                  </ListItem>
-                </Paper>
+                <ColapsedMenuPaper action={handleClick} />
               </List>
             </Collapse>
-            <ListItem>
-              <Link color="#000000" to="/endo_workshop_clinic">
-                <ListItemButton> Pracownia endoskopii</ListItemButton>
+
+            <ListItem sx={{ textAlign: "center" }}>
+              <Link to="/endo_workshop_clinic">
+                <ListItemButton onClick={() => setOpen(false)}>
+                  {" "}
+                  Pracownia endoskopii
+                </ListItemButton>
+                <ListItemAvatar>
+                  <img height={19} src="/logo/nfz2.avif" />
+                </ListItemAvatar>
               </Link>
             </ListItem>
-            <ListItem>
-              <Link color="#000000" to="/documents">
-                <ListItemButton>Pliki do pobrania</ListItemButton>
+            <ListItem sx={{ textAlign: "center" }}>
+              <Link to="/documents">
+                <ListItemButton onClick={() => setOpen(false)}>
+                  Pliki do pobrania
+                </ListItemButton>
               </Link>
             </ListItem>
-            <ListItem>
-              <Link color="#000000" to="/form">
+            <ListItem sx={{ textAlign: "center" }}>
+              <Link to="/pricing">
+                <ListItemButton onClick={() => setOpen(false)}>
+                  Opłaty
+                </ListItemButton>
+                <ListItemAvatar sx={{ justifyContent: "center" }}>
+                  <PaidOutlinedIcon color="primary" fontSize="small" />
+                </ListItemAvatar>
+              </Link>
+            </ListItem>
+            <ListItem sx={{ textAlign: "center" }}>
+              <Link to="/form">
                 <ListItemButton onClick={() => setOpen(false)}>
                   Rejestracja
                 </ListItemButton>
               </Link>
             </ListItem>
-            <ListItem>
-              <Link color="#000000" to="/contact">
+            <ListItem sx={{ textAlign: "center" }}>
+              <Link to="/contact">
                 <ListItemButton onClick={() => setOpen(false)}>
                   Kontakt
                 </ListItemButton>

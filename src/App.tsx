@@ -13,6 +13,7 @@ import { Mental } from "./modules/mental/mental";
 import { EndoWorkshop } from "./modules/endo_workshop/endoWorkshop";
 import { Documents } from "./modules/documents/documents";
 import { Contact } from "./modules/contact/contact";
+import { Pricing } from "./modules/pricing/Pricing";
 
 export const App: FC = () => (
   <Routes>
@@ -25,6 +26,7 @@ export const App: FC = () => (
       <Route path="/children_clinic" element={<Children />} />
       <Route path="/mental_clinic" element={<Mental />} />
       <Route path="/endo_workshop_clinic" element={<EndoWorkshop />} />
+      <Route path="/pricing" element={<Pricing />} />
       <Route path="/documents" element={<Documents />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/form" element={<Form />} />

@@ -7,6 +7,7 @@ interface Props {
   title: string;
   alt: string;
   text: string;
+  text1: string;
   text0: string;
   url: string;
   items: string[];
@@ -24,21 +25,28 @@ export const Clinic: FC<Props> = (data) => {
         "@media(max-width: 576px)": { marginBottom: 0 },
       }}
     >
-      <Box
-        sx={{
-          overflow: "hidden",
-          height: 400,
-          "@media(max-width: 576px)": { height: "auto" },
-        }}
-      >
-        <img height="auto" width="100%" src={data.url} alt={data.alt} />
-      </Box>
+      {data.url ? (
+        <Box
+          sx={{
+            overflow: "hidden",
+            height: 400,
+            "@media(max-width: 576px)": { height: "auto" },
+          }}
+        >
+          <img height="auto" width="100%" src={data.url} alt={data.alt} />
+        </Box>
+      ) : null}
+
       <Box sx={{ justifyItems: "center" }}>
         <h1>{data.title}</h1>
-        <h3>
-          Jesteśmy nowoczesną placówką oferującą usługi z zakresu ochrony
-          zdrowia w ramach sześciu różnych poradni
-        </h3>
+        {data.text1 ? (
+          <h3>{data.text1}</h3>
+        ) : (
+          <h3>
+            Jesteśmy nowoczesną placówką oferującą usługi z zakresu ochrony
+            zdrowia w ramach sześciu różnych poradni
+          </h3>
+        )}
         <p>{Parser(data.text)}</p>
         {data.items ? (
           <List

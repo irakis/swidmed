@@ -1,9 +1,9 @@
 import { FC } from "react";
 import Box from "@mui/material/Box";
 import { Clinic } from "../clinic/clinic";
-import { data } from "./children-data";
+import { data } from "./pricing-data.tsx";
 
-export const Children: FC = () => {
+export const Pricing: FC = () => {
   return (
     <Box
       sx={{
